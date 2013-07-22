@@ -16,8 +16,10 @@
 
     <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
 
+    <script src="assets/js/main.js"></script>
+
   </head>
-  <body>
+  <body ng-app>
     <!-- Mobile-friendly navbar adapted from example. -->
     <!--http://twitter.github.io/bootstrap/examples/starter-template.html -->
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -32,8 +34,8 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#about"role="button" data-toggle="modal">About</a></li>
+              <li><a href="#contact" role="button" data-toggle="modal">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -47,7 +49,7 @@
       
       <div class="row-fluid heading">
         <div class="span12">
-          <h1>Direct0r</h1>
+          <h1>Direct0r X</h1>
         </div>
       </div>
       
@@ -123,7 +125,9 @@
             Do you have a Boxee Box? Do you have an unlisted device type that is controlled
             with an IR remote control? I bet you do! Are you tired of all the remote controls you need
             to control all your devices? Are you tired of you Logitech Harmony remote control that doesn't
-            work with your non-IR devices? I bet you are! So am I! So much so I decided to do something about it!
+            work with your non-IR devices? Are you tired of all the broken promises?
+            
+            I bet you are! So am I! So much so I decided to do something about it!
           </p>
         </div>
       </div>
@@ -183,5 +187,44 @@
       </div>
       
     </div>
+    
+    <!-- Modal About -->
+    <div id="about" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="aboutLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h3 id="aboutLabel">About</h3>
+      </div>
+      <div class="modal-body">
+        <p>I am a software craftsman with an entrepreneurial spirit. This is my first major project which involves more than software. I have been writing software for most of my life, always for someone else. </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+    
+    <!-- Modal Contact Form -->
+    <div id="contact" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h3 id="contactLabel">Contact Me</h3>
+      </div>
+      <form action="contact-form">
+        <div class="modal-body">
+          <fieldset>
+            <legend>Please enter your details and we'll contact you ASAP!</legend>
+            <label>Your name</label>
+            <input type="text" name="name" />
+            <label>Your email</label>
+            <input type="text" name="email" />
+          </fieldset>
+        </div>
+    
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          <button class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+
   </body>
 </html>
